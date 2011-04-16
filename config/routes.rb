@@ -12,4 +12,7 @@ Miaa::Application.routes.draw do
   match "/credits-site", :to => "website#credits", :as => :credits
   match "/une-journee-chez-miaa", :to => "website#a_day_there", :as => :a_day_there
 
+  # TUMBLR
+  match "/get_news", :to => "website#get_news", :as => :get_news
+  
 end

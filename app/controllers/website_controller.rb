@@ -28,4 +28,16 @@ class WebsiteController < ApplicationController
   
   def credits
   end
+  
+  def get_news
+    begin
+      logger.info "CALLING TUMBLR: #{TUMBLR_API_URL + "?num=#{params[:num]}"}"
+      res = Curl::Easy.http_get(TUMBLR_API_URL + "?num=#{params[:num]}")
+      @news = Hash.from_xml(res.body_str)["tumblr"]["posts"]
+    rescue Exception => e
+      logger.info "ERROR FETCHING STUFF FROM TUMBLR: #{e.class} -- #{e.backtrace.to_yaml}"
+      @news = []
+    end
+    render :partial => "/website/all_news"
+  end
 end

@@ -56,9 +56,12 @@
         = link_to "En savoir plus", give_path, :class => "learn-more"
         
 .left
+  = link_to "", "http://miaa-asso.tumblr.com/rss", :title => "Suivre en RSS", :id => "news-rss"
   %h2 Actualité
-  %h4 C'est la reprise des maraudes régulières avec l'hiver
-  
+  #news
+    %p 
+      Chargement des actualités, veuillez patienter...
+    
 .right
   %h2 A voir, à lire...
   %p
@@ -67,3 +70,13 @@
   
   %p
     Des images pour le dire... merci à Hervé pour cette vidéo.
+  
+  %h5 Compte rendu de maraude par Elsa
+  %p
+    "J'arrive  pour la maraude de 11 heures, L’accueil est chaleureux et agréable. Intégrée dans une équipe, nous sommes 
+    équipées d'une voiture, d'un pilote, de repas à distribuer, un plan et un itinéraire à suivre."
+  %p
+    = link_to "Lire la suite", a_day_there_path
+  
+- content_for :on_doc_ready do
+  getNews();

@@ -1,0 +1,12 @@
+- if @news["total"] == 0
+  %p
+    Pas encore d'actualité
+    
+- elsif @news["total"] == "1"
+  = render :partial => "piece_of_news", :locals => {:news => @news.first.last}
+  
+- else
+  - @news.first.last.each do |news|
+    = render :partial => "piece_of_news", :locals => {:news => news}
+  
+  

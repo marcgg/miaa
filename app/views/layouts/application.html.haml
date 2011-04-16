@@ -6,8 +6,12 @@
   /[if IE]
     = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   
-  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
-
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "application"
+  %script{:type => "text/javascript"}
+    $(function(){
+    = yield :on_doc_ready
+    })
+    
   = csrf_meta_tag 
   
   %meta{:name => "description", :content => "Mouvement d'intermittents d'aide aux autres Association à but non lucratif. But : distribuer des repas chauds et des vêtements aux sans abris et les aider dans leur quotidien."}

@@ -90,7 +90,12 @@ h4{
   font-size:1.4em;
   padding: 10px 0px;
 }
-
+h5{
+  font-size: 1.2em;
+  border-top: 1px solid $light_blue;
+  padding-top: 10px;
+  margin-top: 10px;
+}
 strong{
   background-color:yellow;
 }
@@ -223,4 +228,36 @@ footer{
   @include clearfix;
   background-color:$bg_blue;
   padding: 20px;
+}
+
+#news{
+  .news-entry{
+    @include clearfix;
+    border-bottom: 1px solid $light_blue;
+    padding: 10px 0px 20px 0px;
+    .entry-date{
+      font-size: 0.8em;
+      color:#888;
+      margin-top:-5px;
+    }
+    img{
+      float:left;
+      border: 1px solid #ccc;
+      padding: 5px;
+      width:120px;
+      margin: 20px 20px 0px 0px;
+    }
+    p img{
+      margin-top: 5px;
+    }
+  }
+}
+
+#news-rss{
+  display:inline-block;
+  height:20px;
+  width:20px;
+  background: url(/images/feed.png);
+  float:right;
+  margin-right: 20px;
 }
