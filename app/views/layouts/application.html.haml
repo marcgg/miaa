@@ -1,7 +1,7 @@
 !!!
 %html
 %head
-  %title Miaa
+  %title MIAA, Mouvement d'Intermittens d'Aide aux Autres
   = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
   /[if IE]
     = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
@@ -9,24 +9,28 @@
   = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
 
   = csrf_meta_tag 
-
+  
+  %meta{:name => "description", :content => "Mouvement d'intermittents d'aide aux autres Association à but non lucratif. But : distribuer des repas chauds et des vêtements aux sans abris et les aider dans leur quotidien."}
+  
 %body
   #website
     %header
+      = link_to "", "/", :title => "Retour à l'accueil"
     %nav
       #main-nav
-        = link_to "L'Association", ""
-        = link_to "Actualité", ""
-        = link_to "Faire un Don", ""
-        = link_to "Nous Rejoindre", ""
-        = link_to "Contact", ""
+        = link_to "L'Association", presentation_path
+        = link_to "Actualité", news_path
+        = link_to "Faire un Don", give_path
+        = link_to "Nous Rejoindre", join_path
+        = link_to "Contact", contact_path
       
-      = link_to "Faire un Don", "", :id => "gift"
+      = link_to "Faire un Don", give_path, :id => "gift"
         
     #content
       = yield
   
   %footer
-    = link_to "Contact", ""
-    = link_to "Presse", ""
-    = link_to "L'Association", ""
+    = link_to "Contact", contact_path
+    = link_to "Presse", press_path
+    = link_to "L'Association", presentation_path
+    
