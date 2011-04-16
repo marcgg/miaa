@@ -1,6 +1,11 @@
 .news-entry{:class => "tumblr-#{news["type"]}"}
   %h4
-    = news["regular_title"].blank? ? news["type"] : news["regular_title"]
+    - if news["regular_title"].blank? 
+      - unless news["type"] == "photo"
+        = news["type"]
+    - else
+      = news["regular_title"]
+      
   .entry-date= Time.parse(news["date"]).strftime("le %d/%m/%Y à %H:%H")
   
   - unless news["photo_url"].blank?

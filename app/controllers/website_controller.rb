@@ -9,6 +9,7 @@ class WebsiteController < ApplicationController
   end
   
   def news
+    get_news
   end
   
   def give
@@ -30,14 +31,15 @@ class WebsiteController < ApplicationController
   end
   
   def get_news
+    count = params[:num].blank? ? 50 : params[:num]
     begin
-      logger.info "CALLING TUMBLR: #{TUMBLR_API_URL + "?num=#{params[:num]}"}"
-      res = Curl::Easy.http_get(TUMBLR_API_URL + "?num=#{params[:num]}")
+      logger.info "CALLING TUMBLR: #{TUMBLR_API_URL + "?num=#{count}"}"
+      res = Curl::Easy.http_get(TUMBLR_API_URL + "?num=#{count}")
       @news = Hash.from_xml(res.body_str)["tumblr"]["posts"]
     rescue Exception => e
       logger.info "ERROR FETCHING STUFF FROM TUMBLR: #{e.class} -- #{e.backtrace.to_yaml}"
       @news = []
     end
-    render :partial => "/website/all_news"
+    render :partial => "/website/all_news" if params[:num]
   end
 end
