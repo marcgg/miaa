@@ -11,5 +11,22 @@
   = csrf_meta_tag 
 
 %body
-  yep
-  = yield
+  #website
+    %header
+    %nav
+      #main-nav
+        = link_to "L'Association", ""
+        = link_to "Actualité", ""
+        = link_to "Faire un Don", ""
+        = link_to "Nous Rejoindre", ""
+        = link_to "Contact", ""
+      
+      = link_to "Faire un Don", "", :id => "gift"
+        
+    #content
+      = yield
+  
+  %footer
+    = link_to "Contact", ""
+    = link_to "Presse", ""
+    = link_to "L'Association", ""
