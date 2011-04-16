@@ -9,6 +9,7 @@ Miaa::Application.routes.draw do
   match "/contact", :to => "website#contact", :as => :contact
   match "/presse", :to => "website#press", :as => :press
   match "/photos", :to => "website#photos", :as => :photos
+  match "/credits-site", :to => "website#credits", :as => :credits
   match "/une-journee-chez-miaa", :to => "website#a_day_there", :as => :a_day_there
 
 end

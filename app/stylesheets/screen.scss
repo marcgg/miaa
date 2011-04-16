@@ -77,6 +77,15 @@ p{
   border: 1px solid $blue;
 }
 
+.more{
+  background-color: $bg_blue;
+  padding: 10px;
+  margin-top:15px;
+  a{
+    color: $dark_blue;
+  }
+}
+
 h4{
   font-size:1.4em;
   padding: 10px 0px;
@@ -91,6 +100,10 @@ ul{
     list-style:circle;
     margin: 5px 0px 10px 30px;
   }
+}
+em{
+  color:#888;
+  font-style:italic;
 }
 /* MAIN LAYOUT */
 #website{
@@ -157,7 +170,7 @@ footer{
   @include clearfix;
 }
 
-#help-us, .left, .small-left{
+#help-us, .left, .small-left, .small-left-padding{
   h2, h3{
     font-family:"CodeBoldRegular";
     color:$dark_blue;
@@ -172,14 +185,21 @@ footer{
   }
 }
 
-.left, .small-left{
-  float:left;
-}
+.left, .small-left, .small-left-padding{float:left;}
 .left{width: 580px; padding: 20px;}
-.small-left{width:450px}
+.small-left, .small-left-padding{width:450px;}
+.right{width: 300px; padding: 20px;}
+.big-right{width:450px;}
+.big-right-padding{width:400px;}
+.big-right-padding, .small-left-padding{padding:20px;}
 
-.right, .big-right{
+.right, .big-right, .big-right-padding{
   float:right;
+  img{
+    width:100%;
+    display:block;
+    margin: 30px 0px;
+  }
   h2{
     font-family:"PR8CharadeRegular";
     color:$dark_blue;
@@ -187,8 +207,7 @@ footer{
     font-size:1.6em;
   }
 }
-.right{width: 300px; padding: 20px;}
-.big-right{width:450px;}
+
 
 /* INDEX */
 #presentation{

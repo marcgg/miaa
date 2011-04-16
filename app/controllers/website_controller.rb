@@ -25,4 +25,7 @@ class WebsiteController < ApplicationController
   
   def a_day_there
   end
+  
+  def credits
+  end
 end
