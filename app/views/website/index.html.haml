@@ -14,8 +14,15 @@
       
 .right
   %h2 S'inscrire à la Newsletter
+  - if flash
+    - unless flash[:error].blank?
+      %p.error= flash[:error]
+    - unless flash[:notice].blank?
+      %p.notice= flash[:notice]
   %p
-    blah
+    - form_for Subscriber.new do |f|
+      = f.text_field :email, :class => "text"
+      = f.submit "OK", :class => "button"
   
   %h2 Nous Suivre sur Facebook
   %p 

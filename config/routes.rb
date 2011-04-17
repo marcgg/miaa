@@ -15,4 +15,6 @@ Miaa::Application.routes.draw do
   # TUMBLR
   match "/get_news", :to => "website#get_news", :as => :get_news
   
+  # NEWSLETTER
+  resources :subscribers
 end

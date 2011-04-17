@@ -110,6 +110,42 @@ em{
   color:#888;
   font-style:italic;
 }
+
+.text{
+  padding: 5px;
+  color: #666;
+  border: 1px solid #aaa;
+  width: 230px;
+}
+.button{
+  background:url(/images/button_gradient.jpg);
+  color:$dark_blue;
+  border:1px solid $light_blue;
+  text-decoration:none;
+  @include border-radius(5px);
+  padding: 5px;
+  font-weight:bold;
+}
+form{
+  margin-bottom: 20px;
+}
+
+.error{
+  border: 1px solid #ff5555;
+  color: #9f0000;
+  font-weight:bold;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #ffbbbb;
+}
+.notice{
+  color: #009f00;
+  margin-top: 10px;
+  padding: 5px;
+  font-weight:bold;
+  border: 1px solid #55ff55;
+  background-color:#bbffbb;
+}
 /* MAIN LAYOUT */
 #website{
   border-top: 15px solid $dark_blue;
